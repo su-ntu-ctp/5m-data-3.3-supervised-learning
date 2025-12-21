@@ -2,60 +2,64 @@
 
 **⏳ Estimated Prep Time:** 45–60 minutes
 
-Welcome to our flipped-classroom session. In our upcoming live workshop, we will focus heavily on hands-on coding and debugging data pipelines. To make that time effective, you need to review the foundational concepts of data preprocessing and metrics beforehand. 
+Welcome to our flipped-classroom session, where you'll review foundational concepts beforehand to maximize our time for hands-on coding and debugging. This pre-study focuses on the critical pillars of the machine learning pipeline: **Preprocessing, Evaluation Metrics, and Model Generalization**.
 
-> **Note:** **Task 3** covers the *Bias-Variance Tradeoff*. This specific topic is a critical theoretical concept that **will not be covered during the live lecture**. Please ensure you complete this self-study module thoroughly so you are ready to apply the concepts during future model building.
+By familiarizing yourself with these concepts now, we can spend our live session troubleshooting real-world model failures and optimizing pipelines, rather than defining basic terminology. This preparation ensures you are equipped to make high-stakes architectural decisions in your professional data projects.
 
 ## ⚡ Your Self-Study Tasks
 
-Please complete the following activities before our session using the provided **`supervised_learning_2_lesson.ipynb`** notebook.
+Please complete the following activities before our session.
 
-### 📝 Task 1: Data Preprocessing Strategy (20 Minutes)
+### 📝 Task 1: Transforming Raw Data (20 Minutes)
 
-**Activity:** Read the sections titled **"Preprocessing Categorical Variables"** and **"Preprocessing Numerical Variables"** in the notebook. Focus on the logical difference between techniques rather than memorizing the syntax.
+**Activity:** Review the **"Part 1: Preprocessing"** notebook [`part_1_supervised_learning_2_lesson.ipynb`](./notebooks/part_1_supervised_learning_2_lesson.ipynb). Pay close attention to how we handle non-numeric data and why scaling matters for algorithms like SVM and KNN.
 
-**Guiding Questions:**
+**Focus your attention on these key components:**
 
-* **Categorical Data:** When would you choose Label Encoding (assigning integers) over One-Hot Encoding (binary vectors)? How does the concept of "ordinal" vs. "nominal" data drive this decision?
-* **Numerical Scaling:** Review the formulas for Standardization vs. Min-Max Scaling. Why is scaling crucial for algorithms that calculate distance (like KNN or SVM)?
-* **Missing Data:** The text discusses Imputation versus Removal. What is the business risk of simply dropping rows with missing data?
-
-### 📝 Task 2: The Art of Evaluation (15 Minutes)
-
-**Activity:** Review the sections on **"Classification Metrics"** and **"Regression Metrics"**. Pay close attention to the "When to Use" subsections for each metric.
+1. **Categorical Encoding:** The distinction between *Label Encoding* (ordinal) and *One-Hot Encoding* (nominal).
+2. **Scaling:** The mathematical difference between *Standardization* (Z-score) and *Normalization*.
+3. **Imputation:** Strategies for handling missing values without discarding data.
 
 **Guiding Questions:**
 
-* **Accuracy Paradox:** Why might Accuracy be a misleading metric if you are detecting a rare event (like fraud or disease)?
-* **Precision vs. Recall:** If the cost of a "False Negative" is very high (e.g., missing a diagnosis), which metric should you optimize for?
-* **Regression Errors:** How does Mean Squared Error (MSE) treat large errors differently than Mean Absolute Error (MAE)? Which one penalizes outliers more heavily
+* In a professional setting, if you were processing a column for "Employee Rank" (Junior, Senior, Director), would you use Label Encoding or One-Hot Encoding? Why?
+* Why does a model perform poorly if one feature ranges from 0–1 and another ranges from 0–10,000?
 
-### 📝 Task 3: Mastering the Bias-Variance Tradeoff (30 Minutes)
-> This topic is entirely self-study driven and provides the *architectural intuition* needed for building robust models in the future. Post your questions on Discord for discussion.
+### 📝 Task 2: Evaluating Model Performance (20 Minutes)
 
-**Activity:** 
-1.  **Watch:** The instructional video [StatQuest: Bias-Variance Tradeoff](https://www.youtube.com/watch?v=EuBBz3bI-aA) (approx. 6 mins) to get a visual intuition of the concept.
-2.  **Read:** The **"Understanding the Bias-Variance Tradeoff"** section at the end of the notebook.
-3.  **Analyze:** 
-    Examine the "bullseye" diagrams in the notebook illustrating high/low bias and variance.
+**Activity:** Read through the **"Classification Metrics"** and **"Regression Metrics"** sections in [`part_2_supervised_learning_2_lesson.ipynb`](./notebooks/part_2_supervised_learning_2_lesson.ipynb). Focus on understanding that "Accuracy" is rarely enough to judge a business-critical model.
+
+**Focus your attention on these key components:**
+
+1. **Confusion Matrix:** The four quadrants (TP, TN, FP, FN).
+2. **Precision vs. Recall:** The trade-off between minimizing false positives vs. false negatives.
+3. **RMSE vs. MAE:** How different regression metrics penalize large errors.
 
 **Guiding Questions:**
 
-* **Definitions:** How does the notebook define "Bias" (underfitting) versus "Variance" (overfitting)? Which one pays "too much attention to training data"?
-* **Visualizing Error:** In the bullseye visualization, what does it look like when a model has **High Variance** but **Low Bias**?
-* **Balancing Act:** Why does the text state that decreasing one type of error often increases the other? What techniques (e.g., Cross-validation, Regularization) help find the "sweet spot"?
+* **Scenario:** You are building a fraud detection system for a bank. Is it more expensive to have a False Positive (flagging a legit transaction) or a False Negative (missing actual fraud)? Which metric optimizes for this?
+* How does the ROC Curve help you choose a threshold independent of class distribution?
+
+### 📝 Task 3: The Bias-Variance Tradeoff (20 Minutes)
+
+**Activity:** Skim the **"Part 4: Bias-Variance Tradeoff"** notebook [`part_4_supervised_learning_2_lesson.ipynb`](./notebooks/part_4_supervised_learning_2_lesson.ipynb). Analyze the visual plots showing Underfitting (Degree 1) vs. Overfitting (Degree 15).
+
+**Guiding Questions:**
+
+* If your model performs perfectly on training data but fails miserably on test data, does it suffer from High Bias or High Variance?
+* Why might adding *more* features to a model actually hurt its performance in production (overfitting)?
 
 ## 🙌🏻 Active Engagement Strategies
 
-To deepen your retention, try one of the following while you review:
+To deepen your retention and prepare for our group case study, try one of the following:
 
-* **The "Cheat Sheet":** Create a quick reference table comparing *Precision* and *Recall*. Write down one real-world business scenario for each where it would be the primary metric.
-* **Visual Summary:** Sketch the "Total Error" graph mentioned in the Bias-Variance section. Label the point where you think the "sweet spot" for a model lies.
-* **Scenario Matching:** Think of a dataset you currently work with (or want to work with). Based on Task 1, which features would need One-Hot Encoding?
+* **Scenario Matching:** For Task 2, identify a metric you use (or should use) in your current job/projects. Write down *why* it fits your specific business problem.
+* **"Code Commentary":** In the Preprocessing notebook, select the `OneHotEncoder` code block. Write a comment explaining in your own words why `sparse_output=False` might be necessary for visualization but dangerous for memory usage in big data.
+* **The "Sweet Spot" Sketch:** Draw a quick graph of the Bias-Variance tradeoff (Total Error vs. Model Complexity) to visualize where the optimal model lies.
 
 ## 📖 Additional Reading Material
 
 * [Scikit-Learn: Preprocessing Data](https://scikit-learn.org/stable/modules/preprocessing.html)
-* [Precision and Recall Explained](https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html)
+* [Scikit-Learn: Precision and Recall Explained](https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html)
 
 ### 🙋🏻‍♂️ See you in the session!

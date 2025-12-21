@@ -12,18 +12,13 @@ Refer to the following markdown file for the respective sections of the class:
 
 ## Lesson Objectives
 
-Learners will understand:
+By the end of this lesson, you will be able to:
 
-- Preprocessing of variables
-- Evaluation of supervised learning models
-- End-to-end supervised learning workflow
-- Bias-variance tradeoff
+* Apply appropriate preprocessing techniques to numerical and categorical features to prepare raw data for machine learning algorithms.
 
-Learners will be able to:
+* Evaluate the predictive performance of classification and regression models by interpreting key metrics and analyzing the bias-variance tradeoff.
 
-- Preprocess numerical and categorical variables
-- Use various metrics to evaluate classification and regression models
-- Build end-to-end supervised learning workflow
+* Construct a complete end-to-end supervised learning pipeline that integrates data preparation, model training, and validation.
 
 ## Lesson Plan
 
